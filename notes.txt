@@ -1,0 +1,28 @@
+-Some usefule Mockito Annotations and methods
+	-@Mock or mock() - Use to mock an object
+	-when() - when the condition happens
+	-then() - Used with when() to specify an action to take thenReturn can be appended multiple times to return multiple values. If value not specified then return default 
+	 value for that type.
+	-verify() - Used to check if an interaction has happened eg a method fired successfully. It can be used with many matches like never(), times() etc to verify different
+	 scenarios.
+	-An argument matcher, argument matchers perform flexible dynamic stubbing (dynamic stubbing is using when/then) by matching a wide range of conditions more methods here:
+		 * https://www.javatpoint.com/mockito-argument-matchers#:~:text=Argument%20matchers%20are%20mainly%20used,and%20matching%20of%20argument%20values.*/
+	-Mockito ArgumentCaptor is used to capture arguments for mocked methods. ArgumentCaptor is used with Mockito verify() methods to get the arguments passed when any 
+	 method is called. This way, we can provide additional JUnit assertions for our tests. https://www.javatpoint.com/mockito-argumentcaptor
+	-given() similar to when() just BDD style can use then() after it.
+	-Hamcrest library comes with various matchers to help write better assertions 
+	-@Mock and @InjectMock example class A is dependent on class B so we use @Mock with class B. The use @InjectMock with class A which automatically injects all objects
+	annoated with @Mock into it.
+	-@Captor adds an argument capture.
+	-spy() and @Spy are almost the same as mock() and @Mock with a key difference. When Mockito creates a mock – it does so from the Class of a Type, not from an actual instance. 
+	The mock simply creates a bare-bones shell instance of the Class, entirely instrumented to track interactions with it. On the other hand, the spy will wrap an existing 
+	instance. It will still behave in the same way as the normal instance – the only difference is that it will also be instrumented to track all the interactions with it.
+	For example, mocking a list then adding something to it wont actually add anything to the list but spy does. https://www.baeldung.com/mockito-spy
+	-Mockito doesnt mock private methods because really why would you ever test a private method: more information here:
+	 https://github.com/in28minutes/MockitoTutorialForBeginners/blob/master/Step14.md but it has an extension called powermock which can.
+	-PowerMock is an open-source Java framework used for creating a mock object in unit testing. It extends other mocking frameworks such as EasyMock and Mockito to enhance 
+	 the capabilities. ... The PowerMock framework provides a class called PowerMockito used to create mock objects and initiates verification and expectation. PowerMockito is a 
+	 PowerMock's extension API to support Mockito. It provides capabilities to work with the Java Reflection API (Java Reflection makes it possible to inspect classes, interfaces, 
+	 fields and methods at runtime, without knowing the names of the classes, methods etc. at compile time. It is also possible to instantiate new objects, invoke methods and 
+	 get/set field values using reflection.) in a simple way to overcome the problems of Mockito, such as the lack of ability to mock final, static or private methods.
+	 https://www.baeldung.com/intro-to-powermock
